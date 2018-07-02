@@ -255,7 +255,7 @@ class Route extends \mdm\admin\BaseObject
                     $name = strtolower(preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $baseName));
                     $id = ltrim(str_replace(' ', '-', $name), '-');
                     $className = $namespace . $baseName . 'Controller';
-                    if (strpos($className, '-') === false && class_exists($className) && is_subclass_of($className, 'yii\base\Controller')) {
+                    if (strpos($className, '-') === false && class_exists($className) && is_subclass_of($className, 'yii\web\Controller')) {
                         $this->getControllerActions($className, $prefix . $id, $module, $result);
                     }
                 }
